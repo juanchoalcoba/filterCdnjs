@@ -33,3 +33,4 @@ function mostrarResultados(resultados) {
   resultadoElement.innerHTML = '';
   resultadoElement.appendChild(resultadosContainer);
 }
+
