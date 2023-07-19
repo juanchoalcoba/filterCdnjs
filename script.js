@@ -24,13 +24,13 @@ fetch('https://api.cdnjs.com/libraries')
 
 function mostrarResultados(resultados) {
   const resultadosHTML = resultados.map(result => {
-    return `<li><strong>${result.name}</strong>: <a href="${result.latest}">${result.latest}</a></li>`;
+    return `<li>
+              <strong>${result.name}</strong>
+              <div class="link-container">
+                <a href="${result.latest}" target="_blank">${result.latest}</a>
+              </div>
+            </li>`;
   });
 
-  const resultadosContainer = document.createElement('div');
-  resultadosContainer.innerHTML = `<ul>${resultadosHTML.join('')}</ul>`;
-
-  resultadoElement.innerHTML = '';
-  resultadoElement.appendChild(resultadosContainer);
+  resultadoElement.innerHTML = `<ul>${resultadosHTML.join('')}</ul>`;
 }
-
